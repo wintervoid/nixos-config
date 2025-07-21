@@ -44,6 +44,10 @@
       allowUnfree = true;
     };
   };
+  home.packages = with pkgs; [
+	waybar
+	btop
+  ]
 
   # TODO: Set your username
   home = {
