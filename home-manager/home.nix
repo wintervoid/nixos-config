@@ -24,9 +24,9 @@
     # You can add overlays here
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
-      outputs.overlays.additions
-      outputs.overlays.modifications
-      outputs.overlays.unstable-packages
+      #outputs.overlays.additions
+      #outputs.overlays.modifications
+      #outputs.overlays.unstable-packages
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -47,9 +47,13 @@
   home.packages = with pkgs; [
 	waybar
 	btop
-  ]
-
-  # TODO: Set your username
+  ];
+programs.kitty = {
+  enable = true;
+  extraConfig = ''
+    confirm_os_window_close 0
+  '';
+};
   home = {
     username = "winter";
     homeDirectory = "/home/winter";
