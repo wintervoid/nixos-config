@@ -23,7 +23,7 @@
     # import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
   ];
-
+programs.zsh.enable = true;
 
   nixpkgs = {
     # you can add overlays here
@@ -83,6 +83,7 @@
       # be sure to change it (using passwd) after rebooting!
       isNormalUser = true;
       extraGroups = ["wheel"];
+      shell = pkgs.zsh;
     };
   };
 
@@ -105,7 +106,8 @@
 	github-cli
 	home-manager
 	wl-clipboard
-	
+	zsh
+fira-code-nerdfont	
    ];
 services.displayManager.sddm.enable = true;
 services.displayManager.sddm.wayland.enable = true; 

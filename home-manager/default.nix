@@ -48,7 +48,18 @@
 	waybar
 	btop
 	hyprpaper
+	zsh
+	nerd-fonts.jetbrains-mono
   ];
+   programs.zsh = {
+    enable = true;
+    oh-my-zsh = {
+      enable = true;
+      theme = "agnoster";
+      plugins = [ "git" "z" "sudo" ];
+    };
+  };
+
 programs.kitty = {
   enable = true;
   extraConfig = ''
@@ -64,14 +75,14 @@ programs.kitty = {
       home.file.".config/hypr/hyprpaper.conf".text = ''
 splash_offset = 2.0
 
-preload = /home/winter/Pictures/wallpaper.png
+preload = /home/winter/Pictures/deltarune.png
 
-wallpaper = eDP-1,/home/winter/Pictures/wallpaper.png
+wallpaper = eDP-1,/home/winter/Pictures/deltarune.png
 '';
 
 
 
-
+fonts.fontconfig.enable = true;
 
   
   # Add stuff for your user as you see fit:
