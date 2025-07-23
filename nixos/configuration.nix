@@ -104,9 +104,11 @@ programs.zsh.enable = true;
 	phinger-cursors
 	git
 	github-cli
+	inputs.zen-browser.packages."${system}".default
 	home-manager
 	wl-clipboard
 	zsh
+	  inputs.zen-browser.packages.${pkgs.system}.default
 fira-code-nerdfont	
    ];
 services.displayManager.sddm.enable = true;
