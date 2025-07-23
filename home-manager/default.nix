@@ -15,7 +15,7 @@
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
-
+ ./hyprland.nix
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
   ];
@@ -47,6 +47,7 @@
   home.packages = with pkgs; [
 	waybar
 	btop
+	hyprpaper
   ];
 programs.kitty = {
   enable = true;
@@ -54,11 +55,25 @@ programs.kitty = {
     confirm_os_window_close 0
   '';
 };
+
   home = {
     username = "winter";
     homeDirectory = "/home/winter";
   };
+ 
+      home.file.".config/hypr/hyprpaper.conf".text = ''
+splash_offset = 2.0
 
+preload = /home/winter/Pictures/wallpaper.png
+
+wallpaper = eDP-1,/home/winter/Pictures/wallpaper.png
+'';
+
+
+
+
+
+  
   # Add stuff for your user as you see fit:
   programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
