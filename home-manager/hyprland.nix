@@ -73,9 +73,8 @@
   home.packages = with pkgs; [
     hyprland
     alacritty
-    rofi
+    rofi-wayland
     waybar
-    swww
   ];
 }
 

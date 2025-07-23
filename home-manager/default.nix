@@ -49,12 +49,16 @@
 	btop
 	hyprpaper
 	zsh
+	vesktop
 	nerd-fonts.jetbrains-mono
+
+
   ];
    programs.zsh = {
     enable = true;
  initExtra = ''
  hyfetch'';
+
     oh-my-zsh = {
       enable = true;
       theme = "agnoster";
@@ -83,11 +87,18 @@ preload = /home/winter/Pictures/deltarune.png
 wallpaper = eDP-1,/home/winter/Pictures/deltarune.png
 '';
 
-
-
+home.pointerCursor = {
+    name = "phinger-cursors-light";
+    package = pkgs.phinger-cursors;
+    size = 24;
+    gtk.enable = true;
+  };
 fonts.fontconfig.enable = true;
 
-  
+gtk = {
+  enable = true;
+  gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+};
   # Add stuff for your user as you see fit:
   programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
