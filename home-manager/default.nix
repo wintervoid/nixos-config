@@ -53,9 +53,12 @@
   ];
    programs.zsh = {
     enable = true;
+ initExtra = ''
+ hyfetch'';
     oh-my-zsh = {
       enable = true;
       theme = "agnoster";
+    
       plugins = [ "git" "z" "sudo" ];
     };
   };
